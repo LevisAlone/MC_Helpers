@@ -10,6 +10,7 @@ function updateOutput() {
         code.innerHTML = `/give @s minecraft:stone{HideFlags:${amount}}`;
     }
     else {
+        // HideFlags:0 is invalid, and I don't want to give anyone the impression they can use it.
         output.value = "";
         code.innerHTML = `/give @s minecraft:stone{HideFlags:&lt;Bit Mask&gt;}`;
     }
