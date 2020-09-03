@@ -3,28 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MC_Helpers HideFlags Calculator</title>
+    <title>MC Helpers HideFlags Calculator</title>
     <link rel="stylesheet" type="text/css" href="../style.css">
+    <script src="./script.js"></script>
 </head>
 <body>
     <header class="page-header">
-        <nav class="nav-conatiner">
+        <nav class="nav-container">
             <div class="center">
+                <h1 class="site-title">MC Helpers</h1>
                 <ul class="nav invisible">
                     <li class="nav-link-container">
-                        <a class="nav-link invisible" href="../HideFlags/index.html">HideFlags</a>
+                        <a class="nav-link selected invisible" href="../HideFlags/index.html">HideFlags</a>
                     </li>
                 </ul>
             </div>
         </nav>
         <div class="center">
-            <h1 class="Page Title">HideFlags Calculator</h1>
+            <h1 class="page-title">HideFlags Calculator</h1>
         </div>
     </header>
     <main class="center">
-        <h2>Minecraft Helpers</h2>
-        <p>A page to make various things in minecraft simpler.</p>
-        <p>Use the links at the top to go to points.</p>
+        <h2>Parts of the tooltip to hide</h2>
+        <ul class="invisible dashed unselectable">
+            <li><input type="Checkbox" id="1" onclick="updateOutput()"><label for="1">Enchantments</label></li>
+            <li><input type="Checkbox" id="2" onclick="updateOutput()"><label for="2">Attributes</label></li>
+            <li><input type="Checkbox" id="4" onclick="updateOutput()"><label for="4">Unbreakable</label></li>
+            <li><input type="Checkbox" id="8" onclick="updateOutput()"><label for="8">CanDestroy</label></li>
+            <li><input type="Checkbox" id="16" onclick="updateOutput()"><label for="16">CanPlaceOn</label></li>
+            <li><input type="Checkbox" id="32" onclick="updateOutput()"><div class="toolTip"><label for="32">Others</label><span class="toolTipText"><span style="margin-bottom: 3px">&apos;Others&apos; includes:</span>
+                        <ul>
+                            <li>Potions effects</li>
+                            <li>&apos;StoredEnchantments&apos;</li>
+                            <li>Written book tags<br>
+                                &apos;generation&apos; &amp; &apos;author&apos;</li>
+                            <li>&apos;Explosion&apos;</li>
+                            <li>&apos;Fireworks&apos;</li>
+                            <li>Map tooltips</li>
+                        </ul>
+                    </span></div>
+            </li>
+            <li><input type="Checkbox" id="64" onclick="updateOutput()"><label for="64">Dyed (1.16.2+)</label></li>
+        </ul>
+        <div class="output">
+        <input type="button" class="prepended output" onclick="copy('output')" value="Copy"></button>
+        <input type="text" id="output" spellcheck="false" readonly class="output" placeholder="Select parts to hide."></input><br>
+    </div>
+    <h3>An example of using tag this in game is below.</h3>
+    <p class="code">/give @s minecraft:stone{HideFlags:&lt;Bit Mask&gt;}</p>
+    <a href="http://notwoods.github.io/minecraft-tools/hideflags/">Visit the website this is modelled after.</a>
     </main>
 </body>
 </html>
