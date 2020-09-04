@@ -54,6 +54,9 @@ h3 {
 .nav-container {
     background-color:#3D494E;
 }
+.nav-link-container {
+    display: inline-block;
+}
 .nav-link {
     display: block;
     line-height: 2em;
